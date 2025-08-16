@@ -25,15 +25,15 @@ export default function Navbar() {
           />
         </Link>
         {links.map((link) => (
-          <Link key={link.name} href={"/"}>
+          <Link className="hidden md:block" key={link.name} href={"/"}>
             {link.name}
           </Link>
         ))}
       </div>
 
-      <div>
+      <div className="flex">
         {" "}
-        <Button className="bg-orange-600  font-semibold">
+        <Button className="bg-orange-600  font-semibold ">
           <Image
             src={cart}
             alt="Site Logo"
@@ -42,8 +42,13 @@ export default function Navbar() {
             priority
             className="h-auto w-auto"
           />
-          Cart
+          <div className="hidden md:block">Cart</div>
         </Button>
+        <div className="menu-button md:hidden">
+          <div className="menu-bar top-bar"></div>
+          <div className="menu-bar middle-bar"></div>
+          <div className="menu-bar bottom-bar"></div>
+        </div>
       </div>
     </div>
   );
