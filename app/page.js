@@ -1,4 +1,5 @@
 import Image from "next/image";
+// rfc
 
 export default function Home() {
   return (
