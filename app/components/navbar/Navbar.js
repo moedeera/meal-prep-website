@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import logo from "./logo.png";
-import cart from "./cart.png";
+import cart from "./shopping-cart-white.png";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../../../components/ui/button";
@@ -13,7 +13,7 @@ const links = [
 export default function Navbar() {
   return (
     <div className="navbar-container">
-      <div className="flex items-center font-semibold gap-10 w-80 ">
+      <div className="flex items-center font-semibold gap-10 w-full ">
         <Link href="/" aria-label="Go to homepage">
           <Image
             src={logo}
@@ -21,7 +21,7 @@ export default function Navbar() {
             width={150}
             height={50}
             priority
-            className="h-auto w-auto"
+            className="h-auto w-10"
           />
         </Link>
         {links.map((link) => (
@@ -37,12 +37,15 @@ export default function Navbar() {
           <Image
             src={cart}
             alt="Site Logo"
-            width={150}
+            width={100}
             height={50}
             priority
-            className="h-auto w-auto"
+            className="h-auto w-6"
           />
-          <div className="hidden md:block">Cart</div>
+          <Link href={"/"}>
+            {" "}
+            <div className="hidden md:block">Cart</div>{" "}
+          </Link>
         </Button>
         <div className="menu-button md:hidden">
           <div className="menu-bar top-bar"></div>
